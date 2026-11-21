@@ -52,7 +52,7 @@ loggers. The checked-in contraband Scala sources are compiled with the
 hand-written sources. Nothing is downloaded at build time.
 
 %prep
-%autosetup -n sbt-util-logging-%{version}
+%autosetup -n sbt-util-logging-%{version} -p1
 find . -type f \( -name '*.jar' -o -name '*.class' -o -name '*.so' -o -name '*.node' -o -name '*.wasm' \) -print > binaries.list
 if [ -s binaries.list ]; then
 	cat binaries.list
