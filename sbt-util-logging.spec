@@ -1,6 +1,6 @@
 Name:		sbt-util-logging
 Version:	1.11.5
-Release:	1
+Release:	2
 Summary:	sbt logging classes used by Zinc
 Group:		Development/Java
 License:	Apache-2.0
@@ -21,9 +21,9 @@ BuildRequires:	sbt-util = 1.11.5
 BuildRequires:	mvn(org.scala-sbt:util-interface) = 1.11.5
 BuildRequires:	mvn(org.scala-sbt:compiler-interface) = 1.12.0
 BuildRequires:	mvn(org.scala-sbt.jline:jline) = 2.14.7.sbt
-BuildRequires:	mvn(org.fusesource.jansi:jansi) = 2.4.2
-BuildRequires:	mvn(org.jline:jline-terminal) = 3.30.4
-BuildRequires:	mvn(org.jline:jline-native) = 3.30.4
+BuildRequires:	mvn(org.fusesource.jansi:jansi) = 2.4.3
+BuildRequires:	mvn(org.jline:jline-terminal) = 3.30.17
+BuildRequires:	mvn(org.jline:jline-native) = 3.30.17
 BuildRequires:	mvn(org.apache.logging.log4j:log4j-api) = 2.26.1
 BuildRequires:	mvn(org.apache.logging.log4j:log4j-core) = 2.26.1
 BuildRequires:	mvn(com.swoval:file-tree-views) = 2.1.12
@@ -38,9 +38,9 @@ Requires:	sbt-util = 1.11.5
 Requires:	mvn(org.scala-sbt:util-interface) = 1.11.5
 Requires:	mvn(org.scala-sbt:compiler-interface) = 1.12.0
 Requires:	mvn(org.scala-sbt.jline:jline) = 2.14.7.sbt
-Requires:	mvn(org.fusesource.jansi:jansi) = 2.4.2
-Requires:	mvn(org.jline:jline-terminal) = 3.30.4
-Requires:	mvn(org.jline:jline-native) = 3.30.4
+Requires:	mvn(org.fusesource.jansi:jansi) = 2.4.3
+Requires:	mvn(org.jline:jline-terminal) = 3.30.17
+Requires:	mvn(org.jline:jline-native) = 3.30.17
 Requires:	mvn(org.apache.logging.log4j:log4j-api) = 2.26.1
 Requires:	mvn(org.apache.logging.log4j:log4j-core) = 2.26.1
 
@@ -140,17 +140,17 @@ cat > sbt-util-logging.pom << EOF
     <dependency>
       <groupId>org.fusesource.jansi</groupId>
       <artifactId>jansi</artifactId>
-      <version>2.4.2</version>
+      <version>2.4.3</version>
     </dependency>
     <dependency>
       <groupId>org.jline</groupId>
       <artifactId>jline-terminal</artifactId>
-      <version>3.30.4</version>
+      <version>3.30.17</version>
     </dependency>
     <dependency>
       <groupId>org.jline</groupId>
       <artifactId>jline-native</artifactId>
-      <version>3.30.4</version>
+      <version>3.30.17</version>
     </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
