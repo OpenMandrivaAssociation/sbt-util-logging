@@ -1,0 +1,26 @@
+--- a/src/main/scala/sbt/internal/util/JLine3.scala
++++ b/src/main/scala/sbt/internal/util/JLine3.scala
+@@ -74,11 +74,12 @@
+       Charset.forName("UTF-8"),
+       SignalHandler.SIG_DFL
+     ) {
+-      val closed = new AtomicBoolean(false)
++      // JLine 3.30.17 has a protected boolean field named closed.
++      val closedOnce = new AtomicBoolean(false)
+       setOnClose { () =>
+         doClose()
+         reader.close()
+-        if (closed.compareAndSet(false, true)) {
++        if (closedOnce.compareAndSet(false, true)) {
+           // This is necessary to shutdown the non blocking input reader
+           // so that it doesn't keep blocking
+           term.inputStream match {
+@@ -118,7 +119,7 @@
+       }
+       override val output: OutputStream = new OutputStream {
+         override def write(b: Int): Unit = write(Array[Byte](b.toByte))
+-        override def write(b: Array[Byte]): Unit = if (!closed.get) term.withPrintStream { ps =>
++        override def write(b: Array[Byte]): Unit = if (!closedOnce.get) term.withPrintStream { ps =>
+           ps.write(b)
+           term.prompt match {
+             case a: Prompt.AskUser => a.write(b)

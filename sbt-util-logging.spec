@@ -6,6 +6,8 @@ Group:		Development/Java
 License:	Apache-2.0
 URL:		https://github.com/sbt/sbt
 Source0:	sbt-util-logging-%{version}.tar.gz
+# JLine 3.30.17 added a protected boolean field named closed.
+Patch0:		sbt-util-logging-jline-closed.patch
 
 BuildArch:	noarch
 BuildRequires:	scala = 2.13.16
